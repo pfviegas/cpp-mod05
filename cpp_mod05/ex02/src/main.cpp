@@ -10,6 +10,11 @@ int main()
 {
 	Bureaucrat b1("John", 1);
 	Bureaucrat b2("Doe", 150);
+	Bureaucrat b3("Elvis", 5);
+
+	ShrubberyCreationForm ShrubForm("Shrubbery");
+	RobotomyRequestForm RobotForm("Robotomy");
+	PresidentialPardonForm PardonFrom("President");
 
 	try
 	{
@@ -17,30 +22,34 @@ int main()
 		std::cout << "---------- Bureaucrat Info ----------" << std::endl;
 		std::cout << b1;
 		std::cout << b2;
+		std::cout << b3;
 
-		AForm Form1("House Rental", 20, 10);
-		std::cout << Form1 << std::endl;
+		std::cout << ShrubForm << std::endl;
+		std::cout << RobotForm << std::endl;
+		std::cout << PardonFrom << std::endl;
+
 		std::cout << std::endl;
-		b1.executeForm(Form1);
+
+		b1.executeForm(ShrubForm);
+		b2.executeForm(RobotForm);
+		b3.executeForm(PardonFrom);
 		
 		std::cout << std::endl;
 
-		b1.signAForm(Form1);
-		b2.signAForm(Form1);
+		b2.signAForm(ShrubForm);
+		b3.signAForm(RobotForm);
+		b1.signAForm(PardonFrom);
+
+		std::cout << std::endl;
 		
+		b2.executeForm(ShrubForm);
+		b1.executeForm(RobotForm);
+		b3.executeForm(PardonFrom);
+
 		std::cout << std::endl;
 
-		b1.executeForm(Form1);
-		std::cout << std::endl;
-
-		AForm Form2("House Bying", 10, 1);
-		std::cout << Form2 << std::endl;
-		std::cout << std::endl;
-		b1.signAForm(Form2);
-		std::cout << std::endl;
-		b2.executeForm(Form2);
-		std::cout << Form2 << std::endl;
-		std::cout << Form1 << std::endl;
+		b1.signAForm(ShrubForm);
+		b3.executeForm(ShrubForm);
 	}
 	catch(std::exception& e)
 	{
@@ -49,24 +58,4 @@ int main()
 
 	std::cout << std::endl;
 	std::cout << std::endl;
-	
-	try
-	{
-		AForm("Test 1", 0, 0);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	try
-	{
-		AForm("Test 2", 151, 151);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	return (0);
  }

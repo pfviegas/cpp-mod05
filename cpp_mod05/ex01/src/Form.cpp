@@ -16,6 +16,11 @@ Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name
 		throw GradeTooLowException();
 }
 
+// Copy Constructor
+Form::Form(const Form& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExecute(other.getGradeToExecute())
+{
+}
+
 // Copy assignment operator
 Form& Form::operator=(const Form& other)
 {

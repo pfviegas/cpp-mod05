@@ -5,6 +5,8 @@
 
 #include "AForm.hpp"
 
+class AForm;
+
 class RobotomyRequestForm : public AForm
 {
 	private:
@@ -18,6 +20,6 @@ class RobotomyRequestForm : public AForm
 
 		RobotomyRequestForm& operator=(RobotomyRequestForm& other);
 
-		void execute(const Bureaucrat& executor) const;
+		void beExecuted(const Bureaucrat& executor) const;
 };
 #endif

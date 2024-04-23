@@ -5,6 +5,8 @@
 
 #include "AForm.hpp"
 
+class AForm;
+
 class PresidentialPardonForm : public AForm
 {
 	private:
@@ -18,7 +20,7 @@ class PresidentialPardonForm : public AForm
 
 		PresidentialPardonForm& operator=(PresidentialPardonForm& other);
 
-		void execute(const Bureaucrat& executor) const;
+		void beExecuted(const Bureaucrat& executor) const;
 };
 
 #endif

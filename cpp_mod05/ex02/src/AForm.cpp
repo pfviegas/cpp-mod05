@@ -16,6 +16,11 @@ AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute) : _na
 		throw GradeTooLowException();
 }
 
+// Copy Constructor
+AForm::AForm(const AForm& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExecute(other.getGradeToExecute())
+{
+}
+
 // Copy assignment operator
 AForm& AForm::operator=(const AForm& other)
 {

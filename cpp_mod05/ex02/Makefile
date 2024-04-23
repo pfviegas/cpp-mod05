@@ -6,7 +6,7 @@
 #    By: paulo <paulo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 11:46:31 by pviegas           #+#    #+#              #
-#    Updated: 2024/04/23 10:55:21 by paulo            ###   ########.fr        #
+#    Updated: 2024/04/23 16:29:24 by paulo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,11 @@ CXXFLAGS = -Werror -Wall -Wextra -std=c++98  -g #-fsanitize=address
 # Paths
 SRC_DIR = src/
 SRC_FILES =	main.cpp \
+			AForm.cpp \
 			Bureaucrat.cpp \
-			Form.cpp \
-			ShrubberyCreationForm.cpp
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 OBJ_DIR = obj/
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 

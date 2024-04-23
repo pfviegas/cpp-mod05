@@ -3,11 +3,16 @@
 #include "../include/RobotomyRequestForm.hpp"
 
 // Default Constructor
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("Robotomy Request Form", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm()
 {
 }
 
 // Parameterized Constructor
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("Robotomy Request Form", 72, 45), _target(target)
+{
+}
+
+// Copy Constructor
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& target) : AForm(target), _target(target._target)
 {
 }
@@ -26,9 +31,11 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 // Member functions
-void RobotomyRequestForm::execute(const Bureaucrat& executor) const
+void RobotomyRequestForm::beExecuted(const Bureaucrat& executor) const
 {
-	if ( executor.getGrade() > this->getGradeToExecute() )
+	if ( this->getIsSigned() == false )
+		throw AForm::NotSignedException();
+	else if ( executor.getGrade() > this->getGradeToExecute() )
 		throw AForm::GradeTooLowException();
 	else
 	{
@@ -39,7 +46,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 			std::cout << "Vrrrrr... " << std::endl;
 			std::cout << "Whirrr... " << std::endl;
 			std::cout << "Trrrrr... " << std::endl;
-			std::cout << this->_target << " has been robotomized !!" << std::endl;
+			std::cout << this->_target << " has been sucessful !!" << std::endl;
 		}
 		else
 			std::cout << this->_target << "'s Robotomy Failed !! "  << std::endl;

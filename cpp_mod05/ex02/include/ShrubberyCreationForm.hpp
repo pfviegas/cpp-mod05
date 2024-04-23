@@ -7,6 +7,8 @@
 
 #include "AForm.hpp"
 
+class AForm;
+
 class ShrubberyCreationForm : public AForm
 {
 	private:
@@ -20,6 +22,6 @@ class ShrubberyCreationForm : public AForm
 
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
 
-		void execute(const Bureaucrat& executor) const;
+		void beExecuted(const Bureaucrat& executor) const;
 };
 #endif
