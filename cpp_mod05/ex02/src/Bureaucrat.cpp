@@ -1,7 +1,7 @@
 // colocar o header 42
 
 #include "../include/Bureaucrat.hpp"
-#include "../include/Form.hpp"
+#include "../include/AForm.hpp"
 
 // Default Constructor
 Bureaucrat::Bureaucrat() : _name(""), _grade(1) {}
@@ -59,29 +59,29 @@ void    Bureaucrat::decrementGrade()
 	_grade++;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signAForm(AForm& AForm)
 {
 	try
 	{
-		form.beSigned(*this);
-		std::cout << this->_name << " signed " << form.getName() << " form." << std::endl;
+		AForm.beSigned(*this);
+		std::cout << this->_name << " signed " << AForm.getName() << " AForm." << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (AForm::GradeTooLowException &e)
 	{
-		std::cout << this->_name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->_name << " coulnd't sign " << AForm.getName() << " because " << e.what() << std::endl;
 	}
 }
 
-void Bureaucrat::executeForm(const Form& form)
+void Bureaucrat::executeForm(const AForm& AForm)
 {
 	try
 	{
-		form.beExecuted(*this);
-		std::cout << this->getName() << " executed " << form.getName() << "form !!" << std::endl;
+		AForm.beExecuted(*this);
+		std::cout << this->getName() << " executed " << AForm.getName() << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << this->getName() << " couldn't execute " << form.getName() << " form because " << e.what() << std::endl;
+		std::cout << this->getName() << " couldn't execute " << AForm.getName() << " AForm because " << e.what() << std::endl;
 	}
 }
 

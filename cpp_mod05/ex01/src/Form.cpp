@@ -92,6 +92,7 @@ void Form::beExecuted(const Bureaucrat& bureaucrat) const
 std::ostream&   operator<<( std::ostream& os, const Form& form )
 {
 	os << std::endl;
+	os << std::endl;
 	os << "------------- Form Info -------------" << std::endl;
 	os << "Form name: " << form.getName() << std::endl
 		<< "Grade to sign: " << form.getGradeToSign() << std::endl
