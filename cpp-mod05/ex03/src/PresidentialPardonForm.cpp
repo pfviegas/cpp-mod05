@@ -3,12 +3,12 @@
 #include "../include/PresidentialPardonForm.hpp"
 
 // Default Constructor
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm() : AForm("presidential pardon", 25, 5), _target("")
 {
 }
 
 // Parameterized Constructor
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("Presidential Pardon Form", 25, 5), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("presidential pardon", 25, 5), _target(target)
 {
 }
 
@@ -28,6 +28,12 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm
 // Destructor
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+}
+
+// Getters
+std::string PresidentialPardonForm::getTarget() const
+{
+	return (_target);
 }
 
 // Member functions

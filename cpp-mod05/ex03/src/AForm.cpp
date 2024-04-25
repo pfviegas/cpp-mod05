@@ -59,22 +59,22 @@ int AForm::getGradeToExecute() const
 // Exception classes
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is too high !!");
+	return ("the Grade is too high !!");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is too low !!");
+	return ("the Grade is too low !!");
 }
 
 const char* AForm::AlreadySignedException::what() const throw()
 {
-	return ("The AForm is already signed !!");
+	return ("The Form is already signed !!");
 }
 
 const char* AForm::NotSignedException::what() const throw()
 {
-	return ("The AForm it's not signed !!");
+	return ("The Form it's not signed !!");
 }
 
 // Member functions

@@ -64,7 +64,7 @@ void Bureaucrat::signAForm(AForm& AForm)
 	try
 	{
 		AForm.beSigned(*this);
-		std::cout << this->_name << " signed " << AForm.getName() << " AForm." << std::endl;
+		std::cout << this->_name << " signed " << AForm.getName() << " form." << std::endl;
 	}
 	catch (AForm::GradeTooLowException &e)
 	{
@@ -72,28 +72,28 @@ void Bureaucrat::signAForm(AForm& AForm)
 	}
 }
 
-void Bureaucrat::executeForm(const AForm& AForm)
+void Bureaucrat::executeAForm(const AForm& AForm)
 {
 	try
 	{
 		AForm.beExecuted(*this);
-		std::cout << this->getName() << " executed " << AForm.getName() << std::endl;
+		std::cout << this->getName() << " executed " << AForm.getName() << " form." << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << this->getName() << " couldn't execute " << AForm.getName() << " AForm because " << e.what() << std::endl;
+		std::cout << this->getName() << " couldn't execute " << AForm.getName() << " form because " << e.what() << std::endl;
 	}
 }
 
 // Exception Member functions
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is too high !!");
+	return ("the Grade is too high !!");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is too low !!");
+	return ("the Grade is too low !!");
 }
 
 // insertion operator overload

@@ -3,12 +3,12 @@
 #include "../include/ShrubberyCreationForm.hpp"
 
 // Default Constructor
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubbery creation", 145, 137), _target("")
 {
 }
 
 // Parameterized Constructor
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("Shrubbery Creation Form", 145, 137), _target( target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("shrubbery creation", 145, 137), _target(target)
 {
 }
 
@@ -28,6 +28,12 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& o
 // Destructor
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+}
+
+// Getters
+std::string ShrubberyCreationForm::getTarget() const
+{
+	return (_target);
 }
 
 // Member functions

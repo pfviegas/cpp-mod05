@@ -18,6 +18,8 @@ class RobotomyRequestForm : public AForm
 
 		RobotomyRequestForm& operator=(RobotomyRequestForm& other);
 
+		std::string getTarget() const;
+		
 		void beExecuted(const Bureaucrat& executor) const;
 };
 #endif

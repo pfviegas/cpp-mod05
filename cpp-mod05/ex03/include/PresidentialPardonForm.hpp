@@ -18,6 +18,8 @@ class PresidentialPardonForm : public AForm
 
 		PresidentialPardonForm& operator=(PresidentialPardonForm& other);
 
+		std::string getTarget() const;
+		
 		void beExecuted(const Bureaucrat& executor) const;
 };
 

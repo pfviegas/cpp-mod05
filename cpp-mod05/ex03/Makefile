@@ -6,7 +6,7 @@
 #    By: paulo <paulo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 11:46:31 by pviegas           #+#    #+#              #
-#    Updated: 2024/04/23 17:51:19 by paulo            ###   ########.fr        #
+#    Updated: 2024/04/25 12:08:24 by paulo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC_FILES =	main.cpp \
 			Bureaucrat.cpp \
 			ShrubberyCreationForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			PresidentialPardonForm.cpp \
+			Intern.cpp
 OBJ_DIR = obj/
 OBJS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 

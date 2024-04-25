@@ -3,12 +3,12 @@
 #include "../include/RobotomyRequestForm.hpp"
 
 // Default Constructor
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy request", 25, 5), _target("")
 {
 }
 
 // Parameterized Constructor
-RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("Robotomy Request Form", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("robotomy request", 72, 45), _target(target)
 {
 }
 
@@ -28,6 +28,12 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& other)
 // Destructor
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+}
+
+// Getters
+std::string RobotomyRequestForm::getTarget() const
+{
+	return (_target);
 }
 
 // Member functions
