@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:33:11 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:33:13 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
@@ -56,6 +66,6 @@ class Form
 
 };
 
-std::ostream&   operator<<( std::ostream& o, const Form& rhs );
+std::ostream& operator<<(std::ostream& os, const Form& form);
 
 #endif

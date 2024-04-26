@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:32:25 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:32:27 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
 
@@ -46,16 +56,16 @@ int Bureaucrat::getGrade() const
 // Member functions
 void Bureaucrat::incrementGrade()
 {
-	if ( _grade - 1 < MAX_GRADE )
+	if (this->_grade - 1 < MAX_GRADE)
 		throw Bureaucrat::GradeTooHighException();
-	_grade--;
+	this->_grade--;
 }
 
-void    Bureaucrat::decrementGrade()
+void Bureaucrat::decrementGrade()
 {
-	if ( _grade + 1 > MIN_GRADE )
+	if (this->_grade + 1 > MIN_GRADE)
 		throw Bureaucrat::GradeTooLowException();
-	_grade++;
+	this->_grade++;
 }
 
 // Exception Member functions
@@ -72,5 +82,5 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 // insertion operator overload
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& value)
 {
-  return (os << value.getName() << ", bureaucrat grade " << value.getGrade());
+	return (os << value.getName() << ", bureaucrat grade " << value.getGrade());
 }

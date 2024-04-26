@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:36:52 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:48:21 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
 #include "../include/AForm.hpp"
@@ -76,7 +86,7 @@ void Bureaucrat::executeForm(const AForm& AForm)
 {
 	try
 	{
-		AForm.beExecuted(*this);
+		AForm.execute(*this);
 		std::cout << this->getName() << " executed " << AForm.getName() << std::endl;
 	}
 	catch (std::exception& e)

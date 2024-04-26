@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:37:09 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:49:59 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/RobotomyRequestForm.hpp"
 
@@ -20,7 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& target) : AF
 // Copy assignment operator
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& other)
 {
-	if ( this != &other )
+	if (this != &other)
 		*this = other;
 	return (*this);
 }
@@ -31,16 +41,16 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 // Member functions
-void RobotomyRequestForm::beExecuted(const Bureaucrat& executor) const
+void RobotomyRequestForm::execute(const Bureaucrat& executor) const
 {
-	if ( this->getIsSigned() == false )
+	if (this->getIsSigned() == false)
 		throw AForm::NotSignedException();
-	else if ( executor.getGrade() > this->getGradeToExecute() )
+	else if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	else
 	{
 		static int  i;
-		if ( i % 2 == 0 )
+		if (i % 2 == 0)
 		{
 			std::cout << "Bzzzzz... " << std::endl;
 			std::cout << "Vrrrrr... " << std::endl;

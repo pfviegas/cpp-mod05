@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:37:04 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:51:13 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/PresidentialPardonForm.hpp"
 
@@ -20,7 +30,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& tar
 // Copy assignment operator
 PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm& other)
 {
-	if ( this != &other )
+	if (this != &other)
 		*this = other;
 	return (*this);
 }
@@ -31,11 +41,11 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 
 // Member functions
-void PresidentialPardonForm::beExecuted(const Bureaucrat& executor) const
+void PresidentialPardonForm::execute(const Bureaucrat& executor) const
 {
-	if ( this->getIsSigned() == false )
+	if (this->getIsSigned() == false)
 		throw AForm::NotSignedException();
-	else if ( executor.getGrade() > this->getGradeToExecute() )
+	else if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 	else
 		std::cout << "Informs that " << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;

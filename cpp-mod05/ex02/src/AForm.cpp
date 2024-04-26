@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:36:45 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 11:17:52 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/AForm.hpp"
 
@@ -83,14 +93,6 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
 	if ( bureaucrat.getGrade() > _gradeToSign )
 		throw AForm::GradeTooLowException();
 	_isSigned = true;
-}
-
-void AForm::beExecuted(const Bureaucrat& bureaucrat) const
-{
-	if ( bureaucrat.getGrade() > _gradeToExecute )
-		throw AForm::GradeTooLowException();
-	if ( !_isSigned )
-		throw AForm::NotSignedException();
 }
 
 // insertion operator overload

@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:36:01 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 11:16:33 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef AForm_HPP
 #define AForm_HPP
@@ -24,7 +34,7 @@ class AForm
 		int getGradeToExecute() const;
 
 		void beSigned(const Bureaucrat& bureaucrat);
-		virtual void beExecuted(const Bureaucrat& bureaucrat) const = 0;
+		virtual void execute(const Bureaucrat& executor) const = 0;
 
 		// Exception Classes
 		class GradeTooHighException : public std::exception

@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:37:15 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:50:39 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/ShrubberyCreationForm.hpp"
 
@@ -20,7 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& target
 // Copy assignment operator
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm& other)
 {
-	if ( this != &other )
+	if (this != &other)
 		*this = other;
 	return (*this);
 }
@@ -31,11 +41,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 }
 
 // Member functions
-void ShrubberyCreationForm::beExecuted(const Bureaucrat& executor) const
+void ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
-	if ( this->getIsSigned() == false )
+	if (this->getIsSigned() == false)
 		throw AForm::NotSignedException();
-	else if ( executor.getGrade() > this->getGradeToExecute() )
+	else if (executor.getGrade() > this->getGradeToExecute())
 		throw AForm::GradeTooLowException();
 
 	std::ofstream file((this->_target + "_shrubbery" ).c_str());

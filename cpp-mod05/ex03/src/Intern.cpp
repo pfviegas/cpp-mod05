@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 11:21:17 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 13:57:41 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/Intern.hpp"
 #include "../include/RobotomyRequestForm.hpp"
@@ -38,27 +48,39 @@ Intern::~Intern()
 // Member functions
 AForm* Intern::makeForm(const std::string& formName, const std::string& target) const
 {
-	std::string formNames[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	AForm*	form = NULL;
+	AForm*	(Intern::*funcPtr[3])(const std::string& target) const = {&Intern::newShrubbery, &Intern::newRobotomy, &Intern::newPresidential};
+	std::string	formNames[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+
 	for (int i = 0; i < 3; ++i)
 	{
 		if (formName == formNames[i])
 		{
-			switch (i)
-			{
-				case 0:
-					std::cout << "Intern creates " << formName << std::endl;
-					return (new ShrubberyCreationForm(target));
-				case 1:
-					std::cout << "Intern creates " << formName << std::endl;
-					return (new RobotomyRequestForm(target));
-				case 2:
-					std::cout << "Intern creates " << formName << std::endl;
-					return (new PresidentialPardonForm(target));
-			}
+			form = (this->*funcPtr[i])(target);
+			std::cout << "Intern create " << formName << " form." << std::endl;
+			return (form);
 		}
 	}
-	std::cout << "Intern cannot create " << formName << " form" << std::endl;
+	std::cout << "Intern cannot create " << formName << " form : Invalid form name !" << std::endl;
 	return (NULL);
+}
+
+AForm* Intern::newShrubbery(const std::string& target) const
+{
+	AForm*	form = new ShrubberyCreationForm(target);
+	return (form);
+}
+
+AForm* Intern::newRobotomy(const std::string& target) const
+{
+	AForm*	form = new RobotomyRequestForm(target);
+	return (form);
+}
+
+AForm* Intern::newPresidential(const std::string& target) const
+{
+	AForm *	form = new PresidentialPardonForm(target);
+	return form;
 }
 
 // insertion operator overload

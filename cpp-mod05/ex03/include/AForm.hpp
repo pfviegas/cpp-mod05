@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 11:20:29 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 11:30:18 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef AForm_HPP
 #define AForm_HPP
@@ -9,7 +19,6 @@ class Bureaucrat;
 
 class AForm
 {
-
 	public:
 		AForm();
 		AForm(const std::string& name, int gradeToSign, int gradeToExecute);

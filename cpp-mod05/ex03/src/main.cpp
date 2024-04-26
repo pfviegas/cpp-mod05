@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 11:21:22 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 14:01:18 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/AForm.hpp"
 #include "../include/Bureaucrat.hpp"
@@ -73,7 +83,7 @@ int main( void )
 		}
 
 		std::cout << std::endl << "--------------- Form 3 ( presidential pardon ) ---------------" << std::endl;
-		AForm* presidential = intern.makeForm("presidential pardon", "office");
+		AForm* presidential = intern.makeForm("presidential pardon", "palace");
 		PresidentialPardonForm* form3 = dynamic_cast<PresidentialPardonForm*>(presidential);
 		if (form3 != NULL)
 		{

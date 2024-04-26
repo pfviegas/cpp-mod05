@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:36:36 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:50:14 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
@@ -20,6 +30,6 @@ class ShrubberyCreationForm : public AForm
 
 		ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
 
-		void beExecuted(const Bureaucrat& executor) const;
+		void execute(const Bureaucrat& executor) const;
 };
 #endif

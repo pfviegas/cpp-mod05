@@ -1,4 +1,14 @@
-// colocar o header 42
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pviegas <pviegas@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/26 10:33:20 by pviegas           #+#    #+#             */
+/*   Updated: 2024/04/26 10:33:23 by pviegas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/Bureaucrat.hpp"
 #include "../include/Form.hpp"
@@ -77,7 +87,7 @@ void Bureaucrat::executeForm(const Form& form)
 	try
 	{
 		form.beExecuted(*this);
-		std::cout << this->getName() << " executed " << form.getName() << "form !!" << std::endl;
+		std::cout << this->getName() << " executed " << form.getName() << " form !!" << std::endl;
 	}
 	catch (std::exception& e)
 	{
@@ -88,12 +98,12 @@ void Bureaucrat::executeForm(const Form& form)
 // Exception Member functions
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("The Grade is too high !!");
+	return ("the Grade is too high !!");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("The Grade is too low !!");
+	return ("the Grade is too low !!");
 }
 
 // insertion operator overload
